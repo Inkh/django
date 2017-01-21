@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Form!</title>
+  </head>
+  <body>
+    <h1>THIS IS WORKING AYYYYY</h1>
+    <form action="/process" method="post">
+      {% csrf_token %}
+      <p>Name: <input type="text" name="name"></p>
+      <p>Location: <input type="text" name="location"></p>
+      <p>Language: <input type="text" name="lang"></p>
+      <p>Location: </p>
+      <select name = 'location'>
+        <option value="Seattle">Seattle</option>
+        <option value="San Jose">San Jose</option>
+        <option value="Mars">Mars</option>
+        <option value="Moon">Moon</option>
+      </select>
+      <p>Language:</p>
+      <select name = 'lang'>
+        <option value="English">English</option>
+        <option value="Martian">Martian</option>
+        <option value="Android">Android</option>
+        <option value="Swyft">Swyft</option>
+      </select>
+      <input type="submit" value="Submit">
+    </form>
+  </body>
+</html>

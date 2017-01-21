@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>No!</title>
+  </head>
+  <body>
+    <h1>Thanks for submitting! You have submitted the form for a total of {{request.session.num}} times.</h1>
+    <h1>YOU HAVE FOUND ME</h1>
+    <h2>{{ request.session.name }}</h2>
+    <h3>{{ request.session.location }}</h3>
+    <h3>{{ request.session.lang}}</h3>
+  </body>
+</html>
