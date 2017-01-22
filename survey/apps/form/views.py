@@ -18,3 +18,4 @@ def process(request):
 def moja(request):
 
     return render(request, 'form/moja.html')
+    
