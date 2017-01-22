@@ -1,3 +1,9 @@
+*{
+  vertical-align: top;
+  font-family: sans-serif;
+}
+
+
 h1{
-  color:blue
+  color: red
 }
