@@ -41,3 +41,8 @@ def ninjatime(request, color):
         'img': "/disninja/tmntpizza.jpg"
         }
         return render(request, 'disninja/index.html', context)
+    else:
+        context = {
+        'msg': "You've entered an unknown route. Please try again"
+        }
+        return render(request, 'disninja/index.html', context)

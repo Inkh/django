@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Validation</title>
+  </head>
+  <body>
+    {% if messages %}
+      <ul class="messages">
+          {% for message in messages %}
+          <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+          {% endfor %}
+      </ul>
+    {% endif %}
+    <h1>Add your email address to the database!</h1>
+    <form action="/add" method="post">
+      {% csrf_token %}
+      <input type="text" name="email"><input type="submit" value="Add">
+    </form>
+
+    <h3>Email Addresses Entered:</h3>
+    {% for email in emails %}
+      <p>{{email.address}} {{email.created_at}}</p>
+    {% endfor %}
+  </body>
+</html>

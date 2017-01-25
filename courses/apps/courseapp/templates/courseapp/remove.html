@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Remove</title>
+  </head>
+  <body>
+    <h1>CONFIRM REMOVAL FOR COURSE</h1>
+      {% for x in jimbo %}
+        <h1>{{ x.course }}</h1>
+        <h4>{{x.description}}</h4>
+        <form action="/demolish/{{x.id}}" method="post">
+          {% csrf_token %}
+          <input type="hidden" name="delete">
+          <input type="submit" value="DELETE">
+        </form>
+      {% endfor %}
+
+    <form action="/" method="post">
+      {% csrf_token %}
+      <input type="submit" value="GIT BACK">
+    </form>
+  </body>
+</html>
