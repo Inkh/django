@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ADD</title>
+  </head>
+  <body>
+    <h3>Add a New Book Title and a Review:</h3>
+    <form action="/addreview/{{ link_id }}" method="post">
+      {% csrf_token %}
+      <label for="title">Book Title:</label><input type="text" name="title"><br>
+      <label for="author">Author:</label>
+      <p>Choose from the list: </p>
+      <select name="name">
+        <option value="king">Stephen King</option>
+        <option value="brown">Dan Brown</option>
+      </select>
+      <p>Or add a new author: <input type="text" name="name"></p>
+      <label for="text">Review:</label><br>
+      <textarea name="text" rows="8" cols="80"></textarea><br>
+      <input type="submit" value="Submit">
+    </form>
+  </body>
+</html>
