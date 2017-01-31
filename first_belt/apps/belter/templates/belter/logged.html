@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    {% for user in users %}
+      <h1>Welcome {{ user.first_name|title }}</h1>
+      <form action="/logout" method="post">
+        {% csrf_token %}
+        <input type="submit" name="logout" value="Log Out">
+      </form>
+    {% endfor %}
+
+    <h3>Recent Book Reviews:</h3>
+    {% for user in users %}
+    <form action="/addreview/{{ user.id }}" method="post">
+      {% csrf_token %}
+      <input type="submit" value="Add a Book Review">
+    </form>
+    {% endfor %}
+  </body>
+</html>
